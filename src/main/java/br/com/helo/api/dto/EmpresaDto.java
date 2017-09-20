@@ -1,5 +1,9 @@
 package br.com.helo.api.dto;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CNPJ;
+
 /**
  *
  * @author <a href="mailto:andrews.silva@accenture.com">andrews.silva</a>
@@ -34,6 +38,8 @@ public class EmpresaDto {
 	/**
 	 * @return retorna o valor de {@link #razaoSocial}
 	 */
+	@NotEmpty(message = "Razão social não pode ser vazia.")
+	@Length(min = 5, max = 200, message = "Razão social deve conter entre 5 e 200 caracteres.")
 	public String getRazaoSocial() {
 		return this.razaoSocial;
 	}
@@ -50,6 +56,8 @@ public class EmpresaDto {
 	/**
 	 * @return retorna o valor de {@link #cnpj}
 	 */
+	@NotEmpty(message = "CNPJ não pode ser vazio.")
+	@CNPJ(message = "CNPJ inválido.")
 	public String getCnpj() {
 		return this.cnpj;
 	}

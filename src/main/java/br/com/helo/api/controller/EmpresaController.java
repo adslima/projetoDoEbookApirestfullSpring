@@ -32,13 +32,17 @@ public class EmpresaController {
 	@PostMapping
 	public ResponseEntity<Response<EmpresaDto>> cadastrar(@Valid @RequestBody final EmpresaDto empresaDto,
 			final BindingResult result) {
+
 		final Response<EmpresaDto> response = new Response<EmpresaDto>();
+
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
 			return ResponseEntity.badRequest().body(response);
 		}
+
 		empresaDto.setId(1L);
 		response.setData(empresaDto);
+
 		return ResponseEntity.ok(response);
 	}
 
