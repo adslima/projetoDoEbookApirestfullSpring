@@ -1,6 +1,8 @@
-package br.com.helo.api;
+package br.com.helo.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import br.com.helo.api.Entity.Empresa;
 
 /**
  *
