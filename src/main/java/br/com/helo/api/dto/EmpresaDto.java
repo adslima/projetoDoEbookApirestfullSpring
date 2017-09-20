@@ -11,6 +11,10 @@ public class EmpresaDto {
 	private String razaoSocial;
 	private String cnpj;
 
+	public EmpresaDto() {
+
+	}
+
 	/**
 	 * @return retorna o valor de {@link #id}
 	 */
@@ -57,6 +61,14 @@ public class EmpresaDto {
 	 */
 	public void setCnpj(final String cnpj) {
 		this.cnpj = cnpj;
+	}
+
+	/* (non-Javadoc)
+	 *
+	 * @see java.lang.Object#toString() */
+	@Override
+	public String toString() {
+		return "EmpresaDto [id=" + this.id + ", razaoSocial=" + this.razaoSocial + ", cnpj=" + this.cnpj + "]";
 	}
 
 }
