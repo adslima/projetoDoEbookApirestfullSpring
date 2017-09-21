@@ -1,4 +1,4 @@
-package br.com.helo.api;
+package br.com.helo.api.config;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
