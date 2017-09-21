@@ -1,4 +1,4 @@
-package br.com.helo.api.Entity;
+package br.com.helo.api.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,11 +7,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-
-import org.springframework.data.annotation.Id;
 
 /**
  *
@@ -27,10 +26,20 @@ public class Empresa implements Serializable {
 	 */
 	private static final long serialVersionUID = 778991376133139440L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+	@Column(name = "razao_social", nullable = false)
 	private String razaoSocial;
+
+	@Column(name = "cnpj", nullable = false)
 	private String cnpj;
+
+	@Column(name = "data_criacao", nullable = false)
 	private Date dataCriacao;
+
+	@Column(name = "data_atualizacao", nullable = false)
 	private Date dataAtualizacao;
 
 	/**
@@ -46,8 +55,6 @@ public class Empresa implements Serializable {
 	 *
 	 * @return Long
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return this.id;
 	}
@@ -68,7 +75,6 @@ public class Empresa implements Serializable {
 	 *
 	 * @return String
 	 */
-	@Column(name = "razao_social", nullable = false)
 	public String getRazaoSocial() {
 		return this.razaoSocial;
 	}
@@ -89,7 +95,7 @@ public class Empresa implements Serializable {
 	 *
 	 * @return String
 	 */
-	@Column(name = "cnpj", nullable = false)
+
 	public String getCnpj() {
 		return this.cnpj;
 	}
@@ -110,7 +116,6 @@ public class Empresa implements Serializable {
 	 *
 	 * @return Date
 	 */
-	@Column(name = "data_criacao", nullable = false)
 	public Date getDataCriacao() {
 		return this.dataCriacao;
 	}
@@ -131,7 +136,6 @@ public class Empresa implements Serializable {
 	 *
 	 * @return Date
 	 */
-	@Column(name = "data_atualizacao", nullable = false)
 	public Date getDataAtualizacao() {
 		return this.dataAtualizacao;
 	}
