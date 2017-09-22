@@ -2,6 +2,7 @@ package br.com.helo.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  *
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 21 de set de 2017 11:23:20
  */
 @SpringBootApplication
+@EnableCaching
 public class ApiTesteApplication {
 
 	/**

@@ -14,11 +14,13 @@
 		<version>1.5.7.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+	<!-- Inicio das dependencias -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -115,7 +117,13 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId> net.sf.ehcache </groupId>
+			<artifactId> ehcache </artifactId>
+		</dependency>
 	</dependencies>
+
+	<!-- repositorios -->
 	<repositories>
 		<repository>
 			<id> spring-libs-release </id>
