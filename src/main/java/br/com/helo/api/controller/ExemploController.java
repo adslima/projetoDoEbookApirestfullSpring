@@ -1,5 +1,6 @@
 package br.com.helo.api.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +23,9 @@ public class ExemploController {
 	 * @return String
 	 */
 	@GetMapping(value = "/{nome}")
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	public String exemplo(@PathVariable("nome") final String nome) {
+
 		return "Olá " + nome;
 	}
-
 }

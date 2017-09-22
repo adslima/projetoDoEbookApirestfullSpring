@@ -1,4 +1,4 @@
-package br.com.helo.api.entity;
+package br.com.helo.api.entities;
 
 import java.io.Serializable;
 import java.util.Date;
